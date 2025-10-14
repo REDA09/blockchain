@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ex2.dir/src/MerkleTree.cpp.o CMakeFiles/ex2.dir/src/Block.cpp.o CMakeFiles/ex2.dir/src/Blockchain.cpp.o CMakeFiles/ex2.dir/src/PoS.cpp.o CMakeFiles/ex2.dir/src/main_ex2.cpp.o -o ex2  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

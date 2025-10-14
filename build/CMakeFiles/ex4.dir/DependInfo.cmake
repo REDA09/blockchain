@@ -1,0 +1,27 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/reda/Bureau/Blockchain_Ateliers/src/Block.cpp" "CMakeFiles/ex4.dir/src/Block.cpp.o" "gcc" "CMakeFiles/ex4.dir/src/Block.cpp.o.d"
+  "/home/reda/Bureau/Blockchain_Ateliers/src/Blockchain.cpp" "CMakeFiles/ex4.dir/src/Blockchain.cpp.o" "gcc" "CMakeFiles/ex4.dir/src/Blockchain.cpp.o.d"
+  "/home/reda/Bureau/Blockchain_Ateliers/src/MerkleTree.cpp" "CMakeFiles/ex4.dir/src/MerkleTree.cpp.o" "gcc" "CMakeFiles/ex4.dir/src/MerkleTree.cpp.o.d"
+  "/home/reda/Bureau/Blockchain_Ateliers/src/PoS.cpp" "CMakeFiles/ex4.dir/src/PoS.cpp.o" "gcc" "CMakeFiles/ex4.dir/src/PoS.cpp.o.d"
+  "/home/reda/Bureau/Blockchain_Ateliers/src/main_ex4.cpp" "CMakeFiles/ex4.dir/src/main_ex4.cpp.o" "gcc" "CMakeFiles/ex4.dir/src/main_ex4.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
