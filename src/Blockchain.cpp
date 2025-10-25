@@ -1,25 +1,26 @@
 #include "../include/Blockchain.h"
 
-Blockchain::Blockchain(int diff): difficulty(diff) {
+Blockchain::Blockchain(int diff, HashMode mode, uint32_t rule, size_t steps)
+    : difficulty(diff), hashMode(mode), acRule(rule), acSteps(steps) {
     chain.push_back(createGenesisBlock());
 }
 
 Block Blockchain::createGenesisBlock() {
     std::vector<Transaction> t;
     t.push_back(Transaction{"0","genesis","network",0.0});
-    return Block(0,t,"0");
+    return Block(0,t,"0", hashMode, acRule, acSteps);
 }
 
 void Blockchain::addBlock(const std::vector<Transaction>& txs) {
     int idx = chain.size();
-    Block newBlock(idx, txs, chain.back().hash);
+    Block newBlock(idx, txs, chain.back().hash, hashMode, acRule, acSteps);
     newBlock.mineBlock(difficulty);
     chain.push_back(newBlock);
 }
 
 void Blockchain::addBlockPoS(const std::vector<Transaction>& txs, const std::string& validator) {
     int idx = chain.size();
-    Block newBlock(idx, txs, chain.back().hash);
+    Block newBlock(idx, txs, chain.back().hash, hashMode, acRule, acSteps);
     newBlock.hash = newBlock.calculateHash();
     chain.push_back(newBlock);
 }

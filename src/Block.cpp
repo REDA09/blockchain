@@ -1,5 +1,6 @@
 #include "../include/Block.h"
 #include "../include/MerkleTree.h"
+#include "../include/AC_Hash.h"
 #include <sstream>
 #include <iomanip>
 #include <chrono>
@@ -14,20 +15,29 @@ static inline std::string nowIso() {
     return ss.str();
 }
 
-Block::Block(int idx, const std::vector<Transaction>& txs, const std::string& prev) {
+Block::Block(int idx, const std::vector<Transaction>& txs, const std::string& prev,
+             HashMode mode, uint32_t rule, size_t steps) {
     index = idx;
     transactions = txs;
     prevHash = prev;
     timestamp = nowIso();
     merkleRoot = ::merkleRoot(transactions);
     nonce = 0;
+    hashMode = mode;
+    acRule = rule;
+    acSteps = steps;
     hash = calculateHash();
 }
 
 std::string Block::calculateHash() const {
     std::ostringstream ss;
     ss<<index<<timestamp<<prevHash<<merkleRoot<<nonce;
-    return sha256_str(ss.str());
+    std::string data = ss.str();
+    if (hashMode == HashMode::SHA256) {
+        return sha256_str(data);
+    } else {
+        return ac_hash(data, acRule, acSteps);
+    }
 }
 
 void Block::mineBlock(int difficulty) {
